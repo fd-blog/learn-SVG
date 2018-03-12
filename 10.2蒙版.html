@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			svg{stroke: black;fill: none;width:400px;height:400px;border:1px dashed black;}
+		</style>
+	</head>
+	<body>
+		<svg>
+			<defs>
+				<mask id="redmask" x="0" y="0" width="1" height="1" maskContentUnits="objectBoundingBox">
+					<rect x="0" y="0" width="1" height="1" style="fill: #f00;" />
+				</mask>
+				<mask id="greenmask" x="0" y="0" width="1" height="1" maskContentUnits="objectBoundingBox">
+					<rect x="0" y="0" width="1" height="1" style="fill: #0f0;" />
+				</mask>
+				<mask id="bluemask" x="0" y="0" width="1" height='1' maskContentUnits="objectBoundingBox">
+					<rect x="0" y="0" width="1" height="1" style="fill: #00f;" />
+				</mask>
+				<mask id="whitemask" x="0" y="0" width="1" height="1" maskContentUnits="objectBoundingBox">
+					<rect x="0" y="0" width="1" height="1" style="fill: #fff;" />
+				</mask>
+			</defs>
+			
+			<!--显示颜色以演示相对亮度-->
+			<rect x="10" y="10" width="50" height="50" style="fill: #f00;" />
+			<rect x="70" y="10"  width="50" height="50" style="fill: #0f0;" />
+			<rect x="130" y="10" width="50" height="50" style="fill: #00f;" />
+			<rect x="190" y="10" width="50" height="50" style="fill: #fff; stroke: black;" />
+			
+			<!--用于演示透明度的背景内容-->
+			<rect x="10" y="72" width="250" height="5" style="fill: yellow;" />
+			<rect x="10" y="112" width="250" height="5" style="fill: yellow;" />
+			
+			<g style="mask: url(#redmask); font-size: 14pt; text-anchor: middle;">
+				<circle cx="35" cy="115" r="25" style="fill: black;" />
+				<text x="35" y="80">Red</text>
+			</g>
+			
+			
+			<g style="mask: url(#greenmask);font-size: 14pt;text-anchor: middle;">
+				<circle cx="95" cy="115" r="25" style="fill: black;" />
+				<text x="95" y="80">Green</text>
+			</g>
+			<g style="mask: url(#bluemask);font-size: 14pt;text-anchor: middle;">
+				<circle cx="155" cy="115" r="25" style="fill: black;" />
+				<text x="155" y="80">Blue</text>
+			</g>
+			<g style="mask: url(#whitemask);font-size: 14pt;text-anchor: middle;">
+				<circle cx="215" cy="115" r="25" style="fill: black;" />
+				<text x="215" y="80">White</text>
+			</g>
+		</svg>
+		
+		
+		<!--只使用不透明度的蒙版阿尔法值-->
+		<svg>
+			<defs>
+				<mask id="fullmask" x="0" y="0" width="1" height="1" maskContentUnits="objectBoundingBox">
+					<rect x="0" y="0" width="1" height="1" style="fill-opacity: 1.0;fill: white;" />
+				</mask>
+				<mask id="three-fourths" x="0" y="0" width="1" height="1" maskContentUnits="objectBoundingBox">
+					<rect x="0" y="0" width="1" height="1" style="fill-opacity: 0.75;fill: white;" />
+				</mask>
+				<mask id="three" x="0" y="0" width="1" height="1" maskContentUnits="objectBoundingBox">
+					<rect x="0" y="0" width="1" height="1" style="fill-opacity: 0.5;fill: white;"></rect>
+				</mask>
+				<mask id="one-fourth" x="0" y="0" width="1" height="1" maskContentUnits="objectBoundingBox">
+					<rect x="0" y="0" width="1" height="1" style="fill-opacity: 0.25;fill: white;"></rect>
+				</mask>
+			</defs>
+			<g style="font-size: 14pt;text-anchor: middle;fill: black;">
+				<g style="mask: url(#fullmask);">
+					<circle cx="35" cy="35" r="25" />
+					<text x="35" y="80">100%</text>
+				</g>
+				<g style="mask: url(#hree-fourths);">
+					<circle cx="95" cy="35" r="25" />
+					<text x="95" y="80">75%</text>
+				</g>
+				<g style="mask: url(#three);">
+					<circle cx="155" cy="35" r="25" />
+					<text x="155" y="80">50%</text>
+				</g>
+				<g style="mask: url(#one-fourth);">
+					<circle cx="215" cx="35" r="25" />
+					<text x="215" y="80">25%</text>
+				</g>
+			</g>
+		</svg>
+		
+	</body>
+</html>

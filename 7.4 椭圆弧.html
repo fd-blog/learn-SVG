@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<h4>圆弧命令以字母A（绝对坐标的缩写）或者a（相对坐标的缩写）开始，后面紧跟一下7个参数。</h4>
+		<p>1.点所在椭圆的x半径和y半径</p>
+		<p>2.椭圆的x轴旋转角度x-axis-rotation</p>
+		<p>3.large-are-flag，如果需要圆弧的角度小于180度，其为0；如果需要圆弧的角度大于或等于180度，则为1</p>
+		<p>4.sweep-flag，如果需要弧以负角度绘制则为0，以正角度绘制则为1</p>
+		<p>5.终点的x坐标和y坐标（起点由最后一个绘制的点或者最后一个moveto命令确定）</p>
+		<svg width="200" height="200" viewBox="0 0 200 200" style="stroke: black;fill: none;">
+			<path d="M 125,75 A100,50 0 0,0 255,125" />
+		</svg>
+		<svg width="200" height="200" viewBox="0 0 200 200" style="stroke: black;fill: none;">
+			<path d="M 125,75 A100,50 0 0,1 225,125 /">
+		</svg>
+		<svg width="200" height="200" viewBox="0 0 200 200" style="stroke: black;fill: none;">
+			<path d="M 125,75 A100,50 0 1,0 225,125/">
+		</svg>
+		<svg width="200" height="200" viewBox="0 0 200 200" style="stroke: black;fill: none;">
+			<path d="M 125,75 A100,50 0 1,1 225,125/">
+		</svg>
+		
+		<h4>使用椭圆弧</h4> 
+		<svg width="400" height="400" viewBox="0 0 400 300">
+			<ellipse cx="154" cy="154" rx="150" ry="120" style="fill: #999;" />
+			
+			<ellipse cx="152" cy="152" rx="150" ry="120" style="fill: #cef;" />
+			
+			<path d="M 302 152 A 150 120,0,1,0,2 152 A 75 60,0,1 0, 152 152" style="fill: #fcc;" />
+			
+			<path d="M 152 152 A 75 60,0,1,1,302 152" style="fill: #cef;" />
+		</svg>
+	</body>
+</html>

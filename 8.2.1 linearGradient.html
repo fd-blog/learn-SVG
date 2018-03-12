@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>渐变--线性渐变</title>
+		<style type="text/css">
+			svg{stroke: black;fill: none;width:400px;height:200px;border:1px dashed black;}
+		</style>
+	</head>
+	<body>
+		
+		<h4>简单的双色渐变</h4>
+		<svg>
+			<defs>
+				<lineargradient id="one">
+					<stop offset="0%" style="stop-color: red;" />
+					<stop offset="100%" style="stop-color: orange;" />
+				</lineargradient>
+			</defs>
+			<rect x="20" y="20" width="200" height="100" style="fill:url(#one);stroke: black;" />
+		</svg>
+		
+		<h4>三色渐变</h4>
+		<svg>
+			<defs>
+				<lineargradient id="two">
+					<stop offset="0" style="stop-color: red;" />
+					<stop offset="0.333" style="stop-color: orange;" />
+					<stop offset="1" style="stop-color: green;" />
+				</lineargradient>
+			</defs>
+			<rect x="20" y="20" width="200" height="100" style="fill: url(#two);stroke:black;"></rect>
+		</svg>
+		
+		<h4>带有opacity的渐变</h4>
+		<svg>
+			<defs>
+				<lineargradient id="three">
+					<stop offset="0%" style="stop-color: #906;stop-opacity: 1;" />
+					<stop offset="50%" style="stop-color: #906; stop-opacity: 0.3;" />
+					<stop offset="100%" style="stop-color: #906; stop-opacity: 0.1;" />
+				</lineargradient>
+			</defs>
+			<rect x="20" y="20" width="200" height="100" style="fill:url(#three);stroke:black" />
+		</svg>
+		
+		<h4>定义线性渐变的方向</h4>
+		<svg>
+			<defs>
+				<lineargradient id="four">
+					<stop offset="0%" style="stop-color: #ffcc00;" />
+					<stop offset="33.3%" style="stop-color:#cc6699;" />
+					<stop offset="100%" style="stop-color:#66cc99;" />
+				</lineargradient>
+				
+				<lineargradient id="right_to_left" xlink:href="#four" x1="100%" y1="0%" x2="0%" y2="0%" /> 
+				
+				<lineargradient id="down" xlink:href="#four" x1="0%" y1="0%" x2="0%" y2="100%" />
+				
+				<lineargradient id="up" xlink:href="#four" x1="0%" y1="100%" x2="0%" y2="0%" />
+				
+				<lineargradient id="diagonal" xlink:href="#four" x1="0%" y1="0%" x2="100%" y2="100%" />
+			</defs>
+			<rect x="40" y="20" width="200" height="40" style="fill:url(#four);stroke: black;"/> 
+			
+			<rect x="40" y="70" width="200" height="40" style="fill:url(#right_to_left);stroke: black;"/>
+			
+			<rect x="250" y="20" width="40" height="200" style="fill:url(#down);stroke: black;"/>
+			
+			<rect x="300" y="20" width="40" height="200" style="fill:url(#up);stroke: black;"/>
+			
+			<rect x="40" y="120" width="200" height="100" style="fill:url(#diagonal);stroke: black;"/>
+		</svg>
+		
+		<h4>spreadMethod属性</h4>
+		<p>spreadMethod:pad   起始和结束渐变点会扩展到对象的边缘</p>
+		<p>spreadMethod:repeat   渐变灰重复起点到终点的过程，直到填充满整个对象</p>
+		<p>spreadMethod:reflect   渐变灰按终点到起点、起点到终点的排列重复，直到填充满整个对象</p>
+		
+		<svg>
+			<defs>
+				<lineargradient id="five" x1="20%" y1="30" x2="40%" y="80%">
+					<stop offset="0%" style="stop-color: #ffcc00;" />
+					<stop offset="33.3%" style="stop-color:#cc6699;" />
+					<stop offset="100%" style="stop-color: #66cc99" />
+				</lineargradient>
+				
+				<lineargradient id="t1" xlink:href="#five" spreadMethod="pad" />
+				<linearGradient id="t2" xlink:href="#five" spreadMethod="repeat" />
+				<lineargradient id="t3" xlink:href="#five" spreadMethod="reflect" />
+				
+				<line id="show-line2" x1="20" y1="30" x2="40" y2="80" style="stroke: white;" />
+			</defs>
+			
+			<rect x="20" y="20" width="100" height="100" style="fill: url(#t1);stroke:black" />
+			<use xlink:href="#show-line2" transform="translate(20,20)" />
+			
+			<rect x="130" y="20" width="100" height="100" style="fill: url(#t2);stroke:black;" />
+			<use xlink:href="#show-line2" transform="translate(130,20)" />
+			
+			<rect x="240" y="20" width="100" height="100" style="fill: url(#t3);stroke:black" />
+			<use xlink:href="#show-line2" transform="translate(240,20)" />
+			
+		</svg>
+		
+</html>

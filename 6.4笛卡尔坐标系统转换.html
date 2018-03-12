@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>笛卡尔坐标系统转换</title>
+</head>
+<body>
+
+    <h3>直接使用笛卡尔坐标</h3>
+    <svg width="200px" height="200px" viewBox="0 0 200 200">
+         <!-- 轴 -->
+         <line x1="0" y1="0" x2="100" y2="0" style="stroke:black" />
+         <line x1="0" y1="0" x2="0" y2="100" style="stroke:black" />
+         <!-- 梯形 -->
+         <polygon points="40 40,100 40, 70 70,40 70" style="fill:gray;stroke:black;" />
+    </svg>
+    
+    <h3>笛卡尔坐标转换</h3>
+    <svg width="200" height="200" viewBox="0 0 200 200">
+        <g transform="translate(0,100) scale(1,-1)">
+            <!-- 轴 -->
+            <line x1="0" y1="0" x2="100" y2="0" style="stroke:black" />
+            <line x1="0" y1="0" x2="0" y2="100" style="stroke:black" />
+
+             <!-- 梯形 -->
+         <polygon points="40 40,100 40, 70 70,40 70" style="fill:gray;stroke:black;" />
+        </g>
+    </svg>
+</body>
+</html>

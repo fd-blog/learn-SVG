@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>9.5设置文本长度</title>
+		<style type="text/css">
+			svg{stroke: black;fill: none;width:400px;height:400px;border:1px dashed black;}
+		</style>
+	</head>
+	<body>
+		<svg>
+			<g style="font-size: 14pt;">
+				<path d="M 20 10 20 70 M 220 10 220 70" style="stroke: gray;"></path>
+				<text x="20" y="30" textLength="200" lengthAdjust="spacing">Two words</text>
+				<text x="20" y="60" textLength="200" lengthAdjust="spacingAndGlyphs">Two words</text>
+				<text x="20" y="90">Two words <tspan style="font-size: 10pt;">(normal length)</tspan></text>
+				
+				<path d="M 20 100 20 170 M 100 100 100 170" style="stroke:gray;"></path>
+				<text x="20" y="120" textLength="80" lengthAdjust="spacing">Two words</text>
+				<text x="20" y="160" textLength="80" lengthAdjust="spacingAndGlyphs">Two words</text>
+			</g>
+		</svg>
+	</body>
+</html>

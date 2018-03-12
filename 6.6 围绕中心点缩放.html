@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <svg width="200" height="200" viewBox="0 0 200 200">
+    	<!--缩放中心-->
+        <circle cx="50" cy="50" style="fill:black;"/>
+        
+        <!--未缩放的矩形-->
+        <g id="box" style="stroke:black;fill: none;">
+        	<rect x="35" y="40" width="30" height="20" />
+        </g>
+        
+        <use xlink:href="#box" transform="translate(-50,-50) scale(2)" style="stroke-width: 0.5;" />
+        <use xlink:href="#box" transform="translate(-75,-75) scale(2.5)" style="stroke-width: 0.4;" />
+        <use xlink:href="#box" transform="translate(-100,-100) scale(3)" style="stroke-width: 0.33;" />
+    </svg>
+</body>
+</html>

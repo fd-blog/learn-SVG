@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>矩形</title>
+	</head>
+	<body>
+		<svg width="200" height="200" viewBox="0 0 200 200">
+			<!--内部填充为黑色，不绘制边框-->
+			<rect x="10" y="10" width="30" height="50" />
+			
+			<!--内部不填充颜色，绘制黑色边框-->
+			<rect x="50" y="10" width="20" height="40" style="fill: none;stroke: black;" />
+			
+			<!--内部填充蓝色，绘制较粗，半透明红色边框-->
+			<rect x="10" y="70" width="25" height="30" style="fill: #0000ff;stroke: red;stroke-width: 7;stroke-opacity: 0.5;" />
+			
+			<!--内部填充为半透明的黄色，用虚线绘制绿色边框-->
+			<rect x="50" y="70" width="35" height="20" style="fill: yellow;stroke: green;stroke-width: 2;stroke-opacity: 0.5;" />
+		</svg>
+		
+		
+		<h3>圆角矩形</h3>	
+		<svg width="200" height="200" viewBox="0 0 200 200">
+			<!--rx和ry相等，逐渐增大-->
+			<rect x="10" y="10" width="20" height="40" rx="2" ry="2" style="stroke: black;fill: none;" />
+			
+			<rect x="40" y="10" width="20" height="40" rx="5" style="stroke: black;fill: none;" />
+			
+			<rect x="70" y="10" width="20" height="40" ry="10" style="stroke: black;fill: none;" />
+			
+			
+			<!--rx和ry不相等-->
+			<rect x="10" y="60" width="20" height="40" rx="10" ry="5" style="stroke: black;fill: none;" />
+			
+			<rect x="40" y="60" width="20" height="40" rx="5" ry="10" style="stroke: black;fill: none;" />
+		</svg>
+	</body>
+</html>

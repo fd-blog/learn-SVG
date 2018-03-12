@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+    <g transfrom="skewx(20)">
+        <switch>
+            <!-- 选择一个子元素 -->
+            <foreignObject x="25%" y="25%" width="10em" height="50%" requiredFeatures="www.baidu.com">
+                <body xmlns="http://www.w3.org/1999/xhtml">
+                    <p>this is an HTML</p>
+                </body>  
+            </foreignObject>
+            <text x="10em" y="25%" dy="1em">
+                this is ......
+            </text>
+        </switch> 
+    </g>
+
+    <br>
+    
+    switch元素会告诉svg阅读器只有在元素的requiredFeatures、requiredExtensions以及systemLanguage属性求值为true或者缺失时，才绘制第一个直接子元素（以及所有子节点）
+</html>

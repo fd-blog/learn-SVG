@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>9.4 tspan元素</title>
+		<style type="text/css">
+			svg{stroke: black;fill: none;width:400px;height:400px;border:1px dashed black;}
+		</style>
+	</head>
+	<body>
+		<h4>使用tspan  改变文本元素</h4>
+		<svg>
+			<text x="10" y="30">
+				Switch among
+				<tspan style="font-style: italic;">italic</tspan>,normal,and <tspan style="font-weight:bold;">bold</tspan> text.
+			</text>
+		</svg>
+		
+		
+		<h4>使用dy改变文本的垂直位置</h4>
+		<svg>
+			<text x="10" y="30" style="font-size: 12pt;">
+				F <tspan dy="4">a</tspan>
+				<tspan dy="8">l</tspan>
+				<tspan dy="12">w</tspan>
+				<tspan dx="5" dy="-30">r</tspan>
+			</text>
+		</svg>
+		
+		<h4>使用tspan进行绝对定位</h4>
+		<svg>
+			<text x="10" y="30" style="font-size:12pt;">
+				they dined on mince,and slice of quince,
+				<tspan x="20" y="50">which they  ate width a runcible spoon;</tspan>
+				<tspan x="10" y="70">And hand in hand,on the edge of the sand,</tspan>
+				<tspan x="20" dy="20">They danced by the light of the moom</tspan>
+			</text>
+		</svg>
+		
+		<h4>在tspan中为dx,dy,rotate设置多个值</h4>
+		<svg>
+			<text x="30" y="30" style="font-size:14px">It`s
+				<tspan dx="0 4 -3 5 -4 6" dy="0 -3 7 3 -2 -8" rotate="5 10 -5 -20 0 15">shaken</tspan>,not stirred.
+			</text>
+		</svg>
+		
+		<h4>baseline-shift的使用</h4>	
+		<svg>
+			<text x="20" y="25" style="font-size:12pt;">
+				C <tspan style="baseline-shift: sub;">12</tspan>
+				H <tspan style="baseline-shift: sub;">12</tspan>
+				O <tspan style="baseline-shift: sub;">12</tspan>(sugar)
+			</text>
+			
+			<text x="20" y="70" style="font-size:12pt">
+				6.02 x 10 <tspan style="baseline-shift: super;">23</tspan>
+				(Avogadro`s number)
+			</text>
+		</svg>
+		
+	</body>
+</html>

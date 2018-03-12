@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SVG in HTML</title>
+    <style>
+        svg{
+            display: block;
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            border: thick double navy;
+            background: lightblue;
+        }
+        body{
+            font-family: cursive;
+            text-align: center;
+        }
+        circle{
+            fill: lavender;
+            stroke-width: 5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inline SVG in HTML Demo Page</h1>
+    <svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+        <title>An svg</title>
+        <circle cx="125" cy="125" r="100"></circle>
+        <text x="125" y="125" dy="0.5em" text-anchor="middle">Look Ma,Same Font</text>
+    </svg>
+    <p>And here is regular HTML again...</p>
+</body>
+</html>

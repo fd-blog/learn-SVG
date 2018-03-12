@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<h3>使用moveto和lineto</h3>
+		<svg width="150px" height="150px" viewBox='0 0 150 150'>
+			<g style="stroke: black;fill: none;">
+				<!--一条线-->
+				<path d="M 10 10 L 100 10" />
+				
+				<!--直角-->
+				<path d="M 10,20 L 100,20 L 100,50" />
+				
+				<!--两个30度角-->
+				<path d="M 40 60 L 10,60 L 40 42.68 M 60,60 L 90 60 L 60,42.68" />
+			</g>
+		</svg>
+		
+		
+		<h3>使用closepath</h3>
+		<svg width="200" height="200" viewBox="0 0 200 200">
+			<g style="stroke: black; fill: none;">
+				<!--四条线段形式的矩形-->
+				<path d="M 10,10 L 40,10 L 40,30 L 10,30 L 10,10" />
+				
+				<!--closepath绘制的矩形-->
+				<path d="M 60 10 L 90 10 L 90 30 L 60 30 Z"></path>
+				
+				<!--两个30度角-->
+				<path d="M 40 60 L 10 60 L 40 42.68 Z M 60 60 L 90 60 L 60 42.68 Z" />
+			</g>
+			
+		</svg>
+		
+		<h3>独立线条和closepath</h3>	
+		<svg width="200" height="200" viewBox="0 0 200 200">
+			<g style="stroke: gray;stroke-width: 8;fill: none;">
+				<!--四条线形式的矩形-->
+				<path d="M 10 10 L 40 10 L 40 30 L 10 30 L 10 10" />
+				
+				<!--closepath绘制的矩形-->
+				<path d="M 60 10 L 90 10 L 90 30 L 60 30 Z" />
+			</g>
+			
+		</svg>
+	</body>
+</html>

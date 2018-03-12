@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>viewBox</title>
+</head>
+
+<body>
+    <h4>viewBox属性有4个数值组成，它们分别代表想要叠加在视口上的用户坐标系统的最小X坐标，最小Y坐标，宽度和高度。</h4>
+    <svg width="4cm" height="5cm" viewBox="0 0 64 80" style="background:#ccc;">
+        <rect x="10" y="35" width="40" height="40" style="stroke:black;fill:none;" />
+        <!-- 房顶 -->
+        <polyline points="10 35,30 7.68,50 35" style="stroke:black;fill: none;" />
+        <!-- 房门 -->
+        <polyline points="30 75,30 55,40 55,40 75" style="stroke:black;fill:none;" />
+    </svg>
+    <script src=""></script>
+</body>
+
+</html>

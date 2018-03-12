@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			svg{stroke: black;fill: none;width:400px;height:400px;border:1px dashed black;}
+		</style>
+	</head>
+	<body>
+		<svg>
+			<filter id="glow">
+				<fecolormatrix type="matrix" values="0 0 0 0 0 0 0 0 0.9 0 0 0 0.9 0 0 0 0 1 0" />
+				<fegaussianblur stdDeviation="2.5" result="coloredBlur" />
+				<femerge>
+					<femergenode in="coloredBlur" />
+					<femergenode in="SourceGraphic" />
+				</femerge>
+			</filter>
+		</svg>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--stroke-linecap-->
+		<svg width="200" height="200" viewBox="0 0 200 200">
+			<line x1="10" y1="15" x2="50" y2="15" style="stroke: black;stroke-linecap: butt;stroke-width: 15;" />
+			
+			<line x1="10" y1="45" x2="50" y2="45" style="stroke: black;stroke-linecap: round; stroke-width: 15;" />
+			
+			<line x1="10" y1="75" x2="50" y2="75" style="stroke: black;stroke-linecap: square;stroke-width: 15;" />
+			
+			<!--灰色线-->
+			<line x1="10" y1="0" x2="10" y2="100" style="stroke:#999;" />
+			
+			<line x1="50" y1="0" x2="50" y2="100" style="stroke:#999;" />
+		</svg>
+		
+		
+		
+		<!--stroke-linejoin-->
+		<svg width="200" height="200" viewBox="0 0 200 200">
+			<!--stroke-linejoin：miter  尖的-->
+			<polyline points="30 30, 45 15, 60 30" style="stroke-linejoin: miter;stroke: black;stroke-width: 12;fill: none;" />
+			
+			<!--stroke-linejoin：round  圆的-->
+			<polyline points="90 30, 105 15, 120 30" style="stroke-linejoin: round;stroke: black;stroke-width: 12;fill: none;" />
+			
+			<!--stroke-linejoin：bevel  平的-->
+			<polyline points="150 30, 165 15, 180 30" style="stroke-linejoin: bevel;stroke: black;stroke-width: 12;fill: none;" />
+			
+		</svg>
+		
+		
+		
+		
+		<svg width="600" height="600" viewBox="0 0 600 600">
+			<!--直线-->
+			<line x1="10" y1="10" x2="100" y2="10" style="stroke: black;" />
+				
+			<!--矩形-->
+			<rect x="10" y="10" width="30" height="50"  />
+			
+			<!--圆-->
+			<circle cx="100" cy="100" r="50" />
+			
+			<!--椭圆-->
+			<ellipse cx="120" cy="120" rx="30" ry="50" style="fill: red;" />
+			 
+			<!--封闭图形-->
+			<polygon points="150,100 55,100 145,210 51,320" style="fill: green;" />
+			
+			<!--折线-->
+			<polyline points="145 300, 265 165, 380 300" style="fill: purple;" />
+		</svg>
+		
+	</body>
+</html>

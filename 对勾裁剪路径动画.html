@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>对勾裁剪路径动画</title>
+	</head>
+
+	<body style="background: #0a0e3a;">
+		<svg width="1500" height="1100" viewBox="0 0 1500 1100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<defs>
+				<clipPath id="rectClip">
+					<path d="M10,3 L1000,3 L1000,5 L10,5Z" p-id="2640" style="stroke:gray;;fill:#075b79;" />
+
+					<path id="line4" style="stroke:gray;;fill:#075b79" stroke-miterlimit="10" d="M672.747,282.295L546.672,156.22
+		c-0.73-0.966-1.885-1.594-3.189-1.594H44v2.22h498.622c0,0,0.949-0.013,1.794,0.313c0.844,0.325,1.409,0.935,1.409,0.935
+		L671.316,283.66L672.747,282.295z" />
+					<path id="line3" style="stroke:gray;;fill:#075b79;" stroke-miterlimit="10" d="M522.437,173.458l126.075,126.075
+		c0.73,0.966,1.885,1.593,3.19,1.593h341.983v-2.22H652.563c0,0-0.95,0.013-1.794-0.313c-0.844-0.325-1.409-0.935-1.409-0.935
+		L523.869,172.093L522.437,173.458z" />
+				</clipPath>
+				<g id="shapes">
+					<rect x="0" y="0" width="10" height="1100" style="fill:#72fad7;">
+						<animate attributeName="x" attributeType="XML" begin="0s" dur="4s" from="10" to="1000" repeatCount="indefinite" fill="freeze"></animate>
+					</rect>
+				</g>
+			</defs>
+			<path d="M10,3 L1000,3 L1000,5 L10,5Z" p-id="2640" style="stroke:gray;;fill:#075b79;" />
+			<path id="line4" style="stroke:gray;;fill:#075b79;" stroke-miterlimit="10" d="M672.747,282.295L546.672,156.22
+		c-0.73-0.966-1.885-1.594-3.189-1.594H44v2.22h498.622c0,0,0.949-0.013,1.794,0.313c0.844,0.325,1.409,0.935,1.409,0.935
+		L671.316,283.66L672.747,282.295z" />
+			<path id="line3" style="stroke:gray;;fill:#075b79;" stroke-miterlimit="10" d="M522.437,173.458l126.075,126.075
+		c0.73,0.966,1.885,1.593,3.19,1.593h341.983v-2.22H652.563c0,0-0.95,0.013-1.794-0.313c-0.844-0.325-1.409-0.935-1.409-0.935
+		L523.869,172.093L522.437,173.458z" />
+			<use xlink:href="#shapes" style="clip-path:url(#rectClip);" />
+		</svg>
+	</body>
+
+</html>

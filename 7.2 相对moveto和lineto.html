@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		前面的命令都是用大写字母表示，并且都被假定为绝对坐标。如果使用小写命令字母，坐标会被解析为相对于当前的画笔位置.因此下面的路径是相同的.
+		<svg width="200" height="200" viewBox="0 0 200 200">
+			<path d="M 10 10 L 20 10 L 20 30 M 40 40 L 55 35" style="stroke: black;" />
+		</svg>
+		
+		<svg width="200" height="200" viewBox="0 0 200 200">
+			<path d="M 10 10 l 10 0 l 0 20 m 20 10 l 15 -5" style="stroke: black;" />
+		</svg>
+	</body>
+</html>

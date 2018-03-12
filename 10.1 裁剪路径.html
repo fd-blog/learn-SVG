@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<svg width="350" height="200" viewBox="0 0 350 200">
+			<defs>
+				<clippath id="rectClip">
+					<rect id="rect1" x="15" y="15" width="40" height="45" style="stroke:gray;fill: none; /">
+				</clippath>
+			</defs>
+			
+			<!--裁剪矩形-->
+			<use xlink:href="minicat.svg#cat" style="clip-path:url(#rectClip);" />
+			
+			<!--引用图形，显示整个图像和裁剪区轮廓-->
+			<g transform="translate(100,0)">
+				<use xlink:href="#rect1" />      <!--显示裁剪-->
+				<use xlink:href="minicat.svg#cat" />	
+			</g>
+		</svg>
+		
+		
+		<h4>复杂的矩形裁剪</h4>
+		<svg>
+			<defs>
+				<clippath id="curveClip">
+					<path id="curve1" d="M5 55 c 25 5,45 -25,75 55, 85 85,20 105,40 55 Z" style="stroke: black;fill: none;" />
+				</clippath>
+				
+				<clippaaath id="textClip">
+					<text id="text1" x="20" y="20" transform="rotate(60)" style="font-family: 'Liberation Sans'; font-size: 48pt; stroke: black;fill: none;">CLIP</text>
+				</clippaaath>
+				
+				<g id="shapes">
+					<rect x="0" y="50" width="90" height="60" style="fill: #999;" />
+					<circle cx="25" cy="25" r="25" style="fill: #666;" />
+					<polygon points="30 0 80 0 80 100" style="fill: #ccc;" />
+				</g>
+			</defs>
+			<!--绘制曲线裁剪路劲-->
+			<use xlink:href="#shapes" style="clip-path：url(#textClip);" />
+			
+			<!--绘制文本裁剪路径-->
+			<use transform="translate(100,0)" xlink:href="#shapes" style="clip-path:url(#textClip);" />
+			<g transform="translate(0,150)">
+				<use xlink:href="#shapes" />
+				<use xlink:href="#curve1" />    <!--显示裁剪路径-->
+			</g>
+			
+			<g transform="translate(100,150)">
+				<use xlink:href="#shapes" />
+				<use xlink:href="text1"></use>
+			</g>
+		</svg>
+		<h4>应用objectBoundingBox的clipPathUnits</h4>
+		<svg>
+			<defs>
+				<clippath id="circularPath" clipPathUnits="objectBoundingBox">
+					<circle cx="0.5" cy="0.5" r="0.5" />
+				</clippath>
+				<g id="shapes">
+					<rect x="0" y="50" width="100" height="50" style="fill: #999;" />
+					<circle cx="25" cy="25" r="25" style="fill: #666;" />
+					<polygon pointts="30 0 80 0 80 100" style="fill: #ccc;" />
+				</g>
+				<g id="words">
+					<text x="0" y="19" style="font-family: 'Liberation Sans';font-size: 14pt;">
+						<tspan x="0" y="19">If you have form`d a circle</tspan>
+						<tspan x="12" y="35">to go into,</tspan>
+						<tspan x="0" y="51">Go into if yourself</tspan>
+						<tspan x="12" y="67">and see how you would do.</tspan>
+						<tspan x="50" y="87">&#8212;william Blake</tspan>
+					</text>
+				</g>
+			</defs>
+			<use xlink:href="#shapes" style="clip-path: url(#circularPath);" />
+			<use xlin:href="#words" transform="translate(110,0)" style="clip-path:url(#circularPath);" />
+		</svg>
+		
+	</body>
+</html>

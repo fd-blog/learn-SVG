@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			svg{stroke: black;fill: none;width:200px;height:200px;}
+		</style>
+	</head>
+	<body>
+		<h4>线和圆弧</h4>
+		<svg width="200" height="200" viewBox="0 0 200 200">
+			<path d="M 10 20 100 20 A 20 30 0 0 1 120 50 L 120 110"></path>
+		</svg>
+		
+		<h4>放置错误的圆形标记</h4>
+		<svg>
+			<defs>
+				<marker id="mCircle" markerWidth="10" markerHeight="10">
+					<circle cx="5" cy="5" r="4" style="fill:none;stroke: black;" />
+				</marker>
+			</defs>
+			<path d="M 10 20 100 20 A 20 30 0 0 1 120 50 L 120 110" style="marker-start: url(#mCircle);fill: none;stroke: black;" />
+		</svg>
+		
+		<h4>放置正确的圆形标记</h4>
+		<svg>
+			<defs>
+				<marker id="mCircle2" markerWidth="10" markerHeight="10" refX="5" refY="5">
+					<circle cx="5" cy="5" r="4" style="fill:none ;stroke:black;"></circle>
+				</marker>
+			</defs>
+			<path d="M 10 20 100 20 A 20 30 0 0 1 120 50 L 120 110" style="marker-start: url(#mCircle2);fill: none;stroke: black;" />
+		</svg>
+		
+		<h4>尝试使用三个标记（错误定向的标记）</h4>
+		<svg>
+			<defs>
+				<marker id="mCircle3" markerWidth="10" markerHeight="10" refX="5" refY="5">
+					<circle cx="5" cy="5" r="4" style="fill: none;stroke: black;"></circle>
+				</marker>
+				
+				<marker id="mArrow" markerWidth="4" and markerHeight="8" refX="0" refY="4">
+					<path d="M 0 0 4 4 0 8" style="fill:none;stroke:black;"></path>
+				</marker>
+				
+				<marker id="mTriangle" markerWidth="5" markerHeight="10" refX="5" refY="5">
+					<path d="M 0 0 5 5 0 10 Z" style="fill:black;"></path>
+				</marker>
+			</defs>
+			
+			<path d="M 10 20 100 20 A 20 30 0 0 1 120 50 L 120 110" style="marker-start: url(#mCircle3);marker-mid: url(#mArrow);marker-end: url(#mTriangle);fill:none;stroke: black;"></path>
+			
+		</svg>
+		
+		<h4>正确定向的标记</h4>
+		<svg>
+			<defs>
+				<marker id="mCircle4" markerWidth="10" markerHeight="10" refX="5" refY="5">
+					<circle cx="5" cy="5" r="4" style="fill:none;stroke:black;" />
+				</marker>
+				
+				<marker id="mArrow4" markerWidth="6" markerHeight="10" refX="0" refY="4" orient="auto">
+					<path d="M 0 0 4 4 0 8" style="fill:none;stroke:black" />
+				
+				<marker id="mTriangle4" markerWidth="5" markerHeight="10" refX="5" refY="5" orient="auto">
+					<path d="M 0 0 5 5 0 10 Z" style="stroke:black;fill:none;" />
+				</marker>
+			</defs>
+			<path d="M10 20 100 20 A 20 30 0 0 1 120 50 L 120 110" style="marker-start: url(#mCircle4);marker-mid: url(#mArrow4);marker-end: url(#mTriangle4);" />
+		</svg>
+		<p>另一个有用的属性是markerUnits。如果设置为strokeWidth,那么标记的坐标系统会被设定为单位拟等于笔画宽度。标记会与笔画宽度成正比，这是它的默认行为，通常也是我们想要的。如果这个属性设置为userSpaceOnUse，标记的坐标系统会被假定为引用该标记的对象的坐标系统一样。不管笔画宽度为多少，标记都会保持相同的尺寸。</p>
+	</body>
+</html>

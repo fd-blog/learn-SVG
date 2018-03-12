@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <h3>围绕原点旋转</h3>
+    <svg width="200" height="200" viewBox="0 0 200 200 ">
+        <!-- 轴 -->
+        <polyline points="100 0, 0 0,0 100" style="stroke:black;fill:none" />
+
+        <!-- 默认旋转后的正方形 -->
+        <rect x="70" y="30" width="20" height="20" style="fill:gray" />
+        <rect x="70" y="30" width="20" height="20" transform="rotate(45)" style="fill:black" />
+    </svg>
+
+    <h3>围绕中性点旋转</h3>
+
+    <!-- rotata(angle,centerX,centerY) 角度，旋转中心坐标-->
+
+    <svg width="200" height="200" viewBox="0 0 200 200">
+        <!-- 旋转中心 -->
+        <circle cx="50" cy="50" r="3" style="fill:black;"/>
+
+        <!-- 未旋转的箭头 -->
+        <g id="arrow" style="stroke:black;">
+            <line x1="60" y1="50" x2="90" y2="50" />
+            <polygon points="90 50,85 45,85 55" />
+        </g>
+
+        <!-- 围绕中心点旋转 -->
+        <use xlink:href="#arrow" transform="rotate(60,50,50)" />
+        <use xlink:href="#arrow" transform="rotate(-90,50,50)" />
+        <use xlink:href="#arrow" transform="rotate(-150,50,50)" />
+    </svg>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        svg{background: hotpink;}
+    </style>
+</head>
+<body>
+    <h3>使用默认坐标的矩形</h3>
+    <svg width="200" height="200">"
+        <rect x="10" y="10" width="50" height="30" style="stroke:black;fill:none"></rect>
+    </svg>
+
+    <h3>使用明确指定单位的矩形</h3>
+    <svg width="200" height="200">
+        <rect x="10mm" y="10mm" width="15mm" height="10mm" style="stroke:black;fill:none;"></rect>
+    </svg>
+
+    <h3>指定单位视口和没有指定单位的矩形</h3>
+    <svg width="70mm" height="70mm">
+        <rect x="10" y="10" width="50" height="30" style="fill:none;stroke:black;"></rect>
+    </svg>
+</body>
+</html>
